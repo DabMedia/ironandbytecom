@@ -5,7 +5,7 @@ import "./App.css";
 import WhyChooseUs from "./component/WhyChooseUs";
 import HowitWorks from "./component/HowitWorks";
 import Breadcrumb from "./component/Breadcrumb";
-import ServicesSlider from "./component/ServicesSlider ";
+import ServicesSlider from "./component/ServicesSlider";
 import AboutUs from "./pages/About ";
 import Contact from "./pages/Contact ";
 import OffensiveSecurity from "./pages/Services/OffensiveSecurity";
