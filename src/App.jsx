@@ -8,7 +8,6 @@ import Breadcrumb from "./component/Breadcrumb";
 import ServicesSlider from "./component/ServicesSlider ";
 import AboutUs from "./pages/About ";
 import Contact from "./pages/Contact ";
-import Services from "./pages/Services";
 import OffensiveSecurity from "./pages/Services/OffensiveSecurity";
 import RedTeam from "./pages/Services/RedTeam";
 import Pentesting from "./pages/Services/Pentesting";
@@ -31,6 +30,8 @@ import Research from "./pages/Association/Research";
 import Blog from "./pages/Insights/Blog";
 import CaseStudies from "./pages/Insights/CaseStudies";
 import Whitepapers from "./pages/Insights/Whitepapers";
+import TermsAndConditions from "./pages/TermsConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -76,13 +77,17 @@ function App() {
           element={
             <>
               <Breadcrumb />
-              {/* <Services /> */}
+              <ServicesSlider />
             </>
           }
         />
 
         {/* Sub-service pages */}
-        <Route path="/services/offensive-security" element={<OffensiveSecurity />} />
+        <Route path="/services/offensive-security" element={<>
+          <Breadcrumb />
+          <OffensiveSecurity />
+        </>
+        } />
         <Route path="/services/red-team" element={<RedTeam />} />
         <Route path="/services/pentesting" element={<Pentesting />} />
         <Route path="/services/sast-dast" element={<SastDast />} />
@@ -100,10 +105,10 @@ function App() {
             </>
           }
         />
-        <Route path="/rd/scada-security" element={<ScadaSecurity/>} />
-        <Route path="/rd/satcom-security" element={<SatcomSecurity/>} />
-        <Route path="/rd/cyber-design" element={<CyberWeaponsDesign/>} />
-        <Route path="/rd/defens-partnerships" element={<DefensePartnerships/>} />
+        <Route path="/rd/scada-security" element={<ScadaSecurity />} />
+        <Route path="/rd/satcom-security" element={<SatcomSecurity />} />
+        <Route path="/rd/cyber-design" element={<CyberWeaponsDesign />} />
+        <Route path="/rd/defens-partnerships" element={<DefensePartnerships />} />
 
         <Route
           path="/industries"
@@ -142,10 +147,27 @@ function App() {
             </>
           }
         />
-        <Route path="/insights/blog" element={<Blog />} />
-        <Route path="/insights/casestudies" element={<CaseStudies />} />
-        <Route path="/insights/whitepapers" element={<Whitepapers />} />
+        <Route path="/insights/blog" element={
+          <>
+            <Breadcrumb />
+            <Blog />
+          </>
+        } />
+        <Route path="/insights/casestudies" element={
+          <>
+            <Breadcrumb />
+            <CaseStudies />
+          </>
+        } />
+        <Route path="/insights/whitepapers" element={
+          <>
+            <Breadcrumb />
+            <Whitepapers />
+          </>} />
+        <Route path="/terms" element={<TermsAndConditions/>} />
+        <Route path="/privacy" element={<PrivacyPolicy/>} />
       </Routes>
+
     </Layout>
   );
 }

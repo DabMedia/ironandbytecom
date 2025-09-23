@@ -1,48 +1,17 @@
 import React from "react";
-import {
-    FaFacebookF,
-    FaTwitter,
-    FaLinkedinIn,
-    FaInstagram,
-    FaChevronRight,
-} from "react-icons/fa";
-import { motion } from "framer-motion";
-import Logo from "../assets/iblogo.png"; 
+import { FaChevronRight, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Logo from "../assets/iblogo.png";
 import BackToTop from "./BackToTop";
 
-const listItemVariants = {
-    hidden: { opacity: 0, x: -15 },
-    visible: (i) => ({
-        opacity: 1,
-        x: 0,
-        transition: { delay: i * 0.15, duration: 0.4 },
-    }),
-};
-
-// Animation for logo
-const logoVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
 const Footer = () => {
-    const companyLinks = ["Home", "About Us", "Our Team", "Projects", "Contact Us"];
-    const servicesLinks = [
-        "Growth Marketing",
-        "Cyber Security",
-        "Penetration Testing",
-        "Vulnerability Assessment",
-        "Firewall Management",
-    ];
-    const resourcesLinks = ["Blog", "FAQ", "Help & Support", "Case Study", "Sitemap"];
-
     return (
         <footer className="bg-[#0e041a] text-gray-300 pt-16 relative">
             <div className="container mx-auto px-6 md:px-12">
+                {/* 🔹 Newsletter */}
                 <div className="bg-[#1a0b2e] rounded-2xl p-8 mb-14 flex flex-col md:flex-row items-center justify-between gap-6">
-                    {/* Left Side */}
                     <div className="text-center md:text-left">
-                        <h2 className="text-2xl md:text-3xl font-heading text-white font-bold mb-2">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
                             Subscribe To Newsletter
                         </h2>
                         <p className="text-gray-400 text-sm">
@@ -50,7 +19,6 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    {/* Right Side - Input & Button */}
                     <form className="flex w-full md:w-auto max-w-lg">
                         <input
                             type="email"
@@ -72,101 +40,98 @@ const Footer = () => {
                     </form>
                 </div>
 
-                {/* 🔹 Footer Top Section */}
+                {/* 🔹 Footer Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-                    {/* Logo/About */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={logoVariants}
-                    >
+                    {/* Brand / About */}
+                    <div>
                         <img src={Logo} alt="IronandByte Logo" className="h-12 mb-4" />
                         <p className="text-sm text-gray-400 leading-relaxed">
-                            IronandByte provides modern cybersecurity and IT solutions
-                            to help businesses grow securely worldwide.
+                            IronandByte delivers advanced cybersecurity solutions, including penetration testing, threat detection, and digital defense, helping businesses safeguard data, ensure compliance, and stay secure in today’s evolving cyber landscape.
                         </p>
-                    </motion.div>
 
-                    {/* Company */}
+                    </div>
+
+                    {/* Quick Links */}
                     <div>
-                        <h3 className="text-[20px] font-heading text-white font-semibold mb-4">
-                            Company
-                        </h3>
+                        <h3 className="text-xl font-semibold text-[#5637a6] mb-4">Quick Links</h3>
                         <ul className="space-y-2">
-                            {companyLinks.map((link, i) => (
-                                <motion.li
-                                    key={i}
-                                    custom={i}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true }}
-                                    variants={listItemVariants}
-                                    className="flex items-center space-x-2"
-                                >
+                            {[
+                                { name: "Home", path: "/" },
+                                { name: "About Us", path: "/about" },
+                                { name: "R&D", path: "/rd" },
+                                { name: "Industries", path: "/industries" },
+                                { name: "Contact Us", path: "/contact" },
+                                { name: "Terms & Conditions", path: "/contact" },
+                                { name: "Privacy Policy", path: "/contact" },
+                            ].map((link, i) => (
+                                <li key={i} className="flex items-center space-x-2">
                                     <FaChevronRight className="text-[#51ff4a] text-sm" />
-                                    <a href="#" className="hover:text-purple-400">{link}</a>
-                                </motion.li>
+                                    <Link to={link.path} className="hover:text-purple-400">
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-semibold text-[#5637a6] mb-4">Top Categories</h3>
+                        <ul className="space-y-2">
+                            {[
+                                { name: "Offensive Security Solutions", path: "/services/offensive-security" },
+                                { name: "Red Team Services", path: "/services/red-team" },
+                                { name: "Manual Pentesting (VAPT)", path: "/services/pentesting" },
+                                { name: "SAST & DAST", path: "/services/sast-dast" },
+                                { name: "Digital Warfare & State Advisory", path: "/services/state-advisory" },
+                                { name: "VIP & Personal Digital Security", path: "/services/vip-security" },
+                                { name: "Incident Response", path: "/services/incident" },
+                            ].map((link, i) => (
+                                <li key={i} className="flex items-center space-x-2">
+                                    <FaChevronRight className="text-[#51ff4a] text-sm" />
+                                    <Link to={link.path} className="hover:text-purple-400">
+                                        {link.name}
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Services */}
                     <div>
-                        <h3 className="text-[20px] font-heading text-white font-semibold mb-4">
-                            Services
-                        </h3>
-                        <ul className="space-y-2">
-                            {servicesLinks.map((link, i) => (
-                                <motion.li
-                                    key={i}
-                                    custom={i}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true }}
-                                    variants={listItemVariants}
-                                    className="flex items-center space-x-2"
-                                >
-                                    <FaChevronRight className="text-[#51ff4a] text-sm" />
-                                    <a href="#" className="hover:text-purple-400">{link}</a>
-                                </motion.li>
-                            ))}
+                        <h3 className="text-xl font-semibold text-[#5637a6] mb-4">Top Categories</h3>
+                        <ul className="space-y-2 text-sm text-gray-400">
+                            <li>Email: <a href="mailto:info@ironandbyte.com" className="hover:text-purple-400">info@ironandbyte.com</a></li>
+                            <li>Phone: <a href="tel:+911234567890" className="hover:text-purple-400">+91 12345 67890</a></li>
+                            <li>Address: New Delhi, India</li>
                         </ul>
                     </div>
 
-                    {/* Resources */}
-                    <div>
-                        <h3 className="text-[20px] font-heading text-white font-semibold mb-4">
-                            Resources
-                        </h3>
-                        <ul className="space-y-2">
-                            {resourcesLinks.map((link, i) => (
-                                <motion.li
-                                    key={i}
-                                    custom={i}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true }}
-                                    variants={listItemVariants}
-                                    className="flex items-center space-x-2"
-                                >
-                                    <FaChevronRight className="text-[#51ff4a] text-sm" />
-                                    <a href="#" className="hover:text-purple-400">{link}</a>
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </div>
+                    {/* Social */}
+
                 </div>
 
+                {/* 🔹 Bottom */}
                 <div className="mt-12 mb-5 border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between">
                     <p className="text-sm text-center md:text-left">
                         Copyright © 2025{" "}
                         <span className="text-purple-400">IronandByte</span>. All Rights Reserved
                     </p>
 
-                    <div className="flex items-center space-x-6 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-purple-400">Terms & Conditions</a>
-                        <a href="#" className="hover:text-purple-400">Privacy Policy</a>
+                    <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
+                        <div>
+                            <div className="flex space-x-4">
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400">
+                                    <FaFacebook size={20} />
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400">
+                                    <FaTwitter size={20} />
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400">
+                                    <FaLinkedin size={20} />
+                                </a>
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400">
+                                    <FaInstagram size={20} />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

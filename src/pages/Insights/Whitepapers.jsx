@@ -1,5 +1,5 @@
 import React from "react";
-
+import Defense from "../../assets/defense.png"
 export default function Whitepapers() {
     return (
         <section className="bg-[#1a103d] text-white py-16 px-6 md:px-12 lg:px-20">
@@ -7,7 +7,7 @@ export default function Whitepapers() {
                 {/* Image */}
                 <div className="rounded-2xl overflow-hidden shadow-lg">
                     <img
-                        src="https://images.unsplash.com/photo-1581092334737-2b7b6e4c5d26?auto=format&fit=crop&w=1400&q=80"
+                        src={Defense}
                         alt="Whitepapers"
                         className="w-full h-[350px] md:h-[450px] object-cover"
                     />
@@ -23,15 +23,24 @@ export default function Whitepapers() {
                     </p>
 
                     <ul className="space-y-3 text-gray-300 mb-6">
-                        <li>Comprehensive threat analysis</li>
-                        <li>Industry compliance guidelines</li>
-                        <li>Security frameworks & methodologies</li>
-                        <li>Practical recommendations & strategies</li>
+                        <li className="before:content-['■'] before:text-green-400 before:mr-2 before:inline-block">
+                            Comprehensive threat analysis
+                        </li>
+                        <li className="before:content-['■'] before:text-green-400 before:mr-2 before:inline-block">
+                            Industry compliance guidelines
+                        </li>
+                        <li className="before:content-['■'] before:text-green-400 before:mr-2 before:inline-block">
+                            Security frameworks & methodologies
+                        </li>
+                        <li className="before:content-['■'] before:text-green-400 before:mr-2 before:inline-block">
+                            Practical recommendations & strategies
+                        </li>
                     </ul>
+
 
                     <a
                         href="/contact"
-                        className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:opacity-95 transition"
+                        className="inline-block bg-gradient-to-r from-[#52e257] to-[#562eab] text-white px-6 py-3 rounded-sm shadow-md hover:opacity-95 transition"
                     >
                         Download Whitepapers
                     </a>
