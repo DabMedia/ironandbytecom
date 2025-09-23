@@ -74,7 +74,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-xl font-semibold text-[#5637a6] mb-4">Top Categories</h3>
+                        <h3 className="text-xl font-semibold text-[#5637a6] mb-4">Services</h3>
                         <ul className="space-y-2">
                             {[
                                 { name: "Offensive Security Solutions", path: "/services/offensive-security" },
@@ -96,7 +96,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h3 className="text-xl font-semibold text-[#5637a6] mb-4">Top Categories</h3>
+                        <h3 className="text-xl font-semibold text-[#5637a6] mb-4">Contacts</h3>
                         <ul className="space-y-2 text-sm text-gray-400">
                             <li>Email: <a href="mailto:info@ironandbyte.com" className="hover:text-purple-400">info@ironandbyte.com</a></li>
                             <li>Phone: <a href="tel:+911234567890" className="hover:text-purple-400">+91 12345 67890</a></li>
