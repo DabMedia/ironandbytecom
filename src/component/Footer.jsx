@@ -100,7 +100,7 @@ const Footer = () => {
                         <ul className="space-y-2 text-sm text-gray-400">
                             <li>Email: <a href="mailto:info@ironandbyte.com" className="hover:text-purple-400">info@ironandbyte.com</a></li>
                             <li>Phone: <a href="tel:+911234567890" className="hover:text-purple-400">+91 12345 67890</a></li>
-                            <li>Address: New Delhi, India</li>
+                            <li>Address: 3rd Floor, D-124, Koelnagar, Rourkela, Odisha - 769014</li>
                         </ul>
                     </div>
 
