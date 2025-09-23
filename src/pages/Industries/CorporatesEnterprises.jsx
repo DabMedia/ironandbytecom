@@ -24,7 +24,7 @@ export default function CorporatesEnterprises() {
 
           <a
             href="/contact"
-            className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:opacity-95 transition"
+            className="inline-block bg-gradient-to-r from-[#52e257] to-[#562eab] text-white px-6 py-3 rounded-sm shadow-md hover:opacity-95 transition"
           >
             Talk Enterprise Security
           </a>
