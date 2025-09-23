@@ -8,7 +8,7 @@ import OffensiveSecurity from "../assets/offensive-security.png";
 import RedTeam from "../assets/redTeam.jpeg";
 import Pentesting from "../assets/pentesting.png";
 import SASTandDAST from "../assets/SAST&DAST.jpeg";
-import DigitalWarfare from "../assets/digitalWarfare.jpeg"; // ✅ Added import
+import digitalWarfare from "../assets/digital-warfare.jpeg";
 import PersonalDigitalSecurity from "../assets/VIPPersonalDigitalSecurity.jpeg";
 import IncidentResponse from "../assets/IncidentResponse.jpeg";
 
@@ -45,7 +45,7 @@ const services = [
         id: 5,
         title: "Digital Warfare & State Advisory",
         desc: "Strategic guidance and advanced cyber defense measures to protect critical infrastructure against state-sponsored threats.",
-        img: DigitalWarfare,
+        img: digitalWarfare,
         path: "/services/state-advisory",
     },
     {
